@@ -1,0 +1,88 @@
+<div class="row">
+        <div class="image-div">
+            <img class="logo"src="assets/img/burger.png">
+        </div>
+</div>  
+<div class="row">
+            <h2 class="h1-div">Eat-Da-Burger!</h2>
+</div>  
+
+<div class="row">
+    <div class="input-field col s4 offset-s1">
+        <table class="highlight responsive-table">
+
+            <thead>
+                <tr>
+                    <th colspan="3">To be Enjoyed</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {{#each results}}
+                    {{#if devoured}}
+                    {{else}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{burger_name}}</td>
+                    <td>                    
+                        <button class="btn waves-effect waves-light #4fc3f7 light-blue black-text lighten-2 devour" id="{{id}}" type="submit" name="action">Devour!
+                            <i class="material-icons right">send</i>
+                        </button> 
+                    </td>
+                </tr>
+                    {{/if}}
+                {{/each}}                
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="input-field col s4 offset-s2">
+        <table class="highlight responsive-table">
+
+            <thead>
+                <tr>
+                    <th colspan="2">Devoured</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {{#each results}}
+                    {{#if devoured}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{burger_name}}</td>
+                        </tr>
+                    {{/if}}
+                {{/each}}                
+            </tbody>
+
+        </table>
+    </div>
+
+  
+</div>
+
+<div class="row">
+    <form class="col s6 offset-s3" id="add-form">
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="burger_name" type="text" class="validate">
+            <label for="burger_name" class="black-text">What Burger would you like?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="submit-div">
+                    <button class="btn waves-effect waves-light #4fc3f7 light-blue black-text lighten-2 center-align" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button> 
+                </div>       
+            </div>
+        </div>
+    
+    </form>
+  </div>
+
+
+  <script src="/assets/javascript/main.js"></script>
